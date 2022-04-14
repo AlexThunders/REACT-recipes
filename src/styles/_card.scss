@@ -1,0 +1,146 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0;
+  position: static;
+  width: 290px;
+  height: 270px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  margin: 15px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: .3s;
+  &:hover {
+    background-position-x: (-1px);
+  .circleIcon {
+    background-color: #598e4b;
+    opacity: .6;
+    .fa-utensils, .fa-hamburger, .fa-cheese {
+      color: rgb(0, 124, 165);
+    }
+  }
+  h3 {
+    transform: translateY(10px);
+  }
+  h3 span {
+    color: rgb(255, 45, 3);
+  }
+
+
+
+}
+
+
+  .circleIcon {
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 240px;
+    background: #ede58f;
+    border-radius: 50%;
+    position: relative;
+    .fa-utensils, .fa-hamburger, .fa-cheese {
+      color: #f93c11;
+      font-size: 28px;
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  h3 {
+    width: 100%;
+    height: 60px;
+    opacity: .6;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    background-color: #f9f5f5;
+    line-height: 50px;
+    padding: 20px 10px;
+    margin: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+    transition: 1s;
+    justify-content: center;
+    span {
+      transition: 1s;
+      font-weight: 900;
+      color: rgb(2, 51, 2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 2px;
+
+    }
+  }
+
+  p {
+    position: static;
+    width: 81px;
+    width: 178px;
+    height: 20px;
+    left: 40px;
+    top: 193px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #241c3d;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin: 20px 0 0 40px;
+  }
+
+
+
+
+  @media (min-width: 576px) {
+    & {
+      flex: 1;
+      order: 1;
+      flex-grow: 1;
+      margin-right: 15px;
+      width: calc(576px/3 - 20px);
+    }
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+    .circleIcon {
+      width: 35px;
+      height: 35px;
+      margin: 0 0 0 125px;
+      .fa-utensils, .fa-hamburger, .fa-cheese {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media (min-width: 1080px) {
+    & {
+      width: 328px;
+      flex: 1;
+      order: 1;
+      margin-right: 30px;
+      width: calc(1080px/3 - 20px);
+    }
+    .circleIcon {
+      width: 43px;
+      height: 43px;
+      margin: 0 0 0 285px;
+      .fa-utensils, .fa-hamburger, .fa-cheese {
+        font-size: 26px;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.authPortal {
+  position: absolute;
+  width: 100%;
+  min-width: 320px;
+  top: 80px;
+  padding: 5px 10px 25px 20px;
+  background-color: rgb(174, 182, 194);
+  color: rgb(255, 255, 255);
+  min-height: 540px;
+  height: auto;
+  z-index: 1;
+  border-radius: 3px;
+
+  h3 {
+    margin: 0 auto 5px;
+    padding: 10px;
+    font-size: 25px;
+  }
+
+  .error {
+    height: 60px;
+    margin: 0 0 0 5px;
+    color: rgb(132, 28, 28);
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    @media (min-width: 768px) {
+      margin: 0 0 25px 20px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    @media (min-width: 1080px) {
+      margin-left: 100px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 30px;
+    font-size: 18px;
+    outline: none;
+  }
+
+  .sbmt {
+    padding: 3px;
+    border-radius: 3px;
+    background: #337a3b;
+    color: #FFFFFF;
+    width: 40%;
+    border-radius: 5px;
+  }
+
+  .create-acc-btn {
+    padding: 5px 13px;
+    margin: 3px 25px;
+    font-family: sans-serif;
+    border-radius: 3px;
+  }
+
+  .fa-window-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    font-size: 25px;
+    color: #a44138;
+    transition: .2s;
+    cursor: pointer;
+    &:hover {
+      color: #c9675e;
+    }
+  }
+
+  @media (min-width: 576px) {
+    width: 576px;
+    height: 400px;
+    padding-bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    h3 {
+      margin: 5px 0 20px 90px;
+      font-size: 28px;
+    }
+    label {
+      font-size: 18px;
+      margin-left:50px;
+    }
+    input {
+      margin-left:50px;
+      width: 60%;
+      font-size: 20px;
+    }
+    .fa-window-close {
+      font-size: 35px;
+      margin: 15px;
+    }
+    .create-acc-btn { 
+      margin-left: 100px;
+    }
+    .sbmt {
+      width: 20%;
+      margin-top: 20px;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    width: 1080px;
+    height: 420px;
+    padding-bottom: 40px;
+    h3 {
+      margin: 25px 0 25px 90px;
+    }
+    label {
+      font-size: 20px;
+    }
+    .create-acc-btn { 
+      padding: 7px 15px;
+      font-size: 18px;
+      border-radius: 3px;
+    }
+  }
+}

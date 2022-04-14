@@ -1,0 +1,113 @@
+.authcard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  order: 0;
+  padding: 0 0 18px 10px;
+  font-family: 'Montserrat', sans-serif;
+
+  h1 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .enterBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-top: 10px;
+
+    .enterBtn2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 5px 30px;
+      background: #516eb7;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: sans-serif;
+      line-height: 22px;
+      border-radius: 5px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      transition: .3s;
+      cursor: pointer;
+      &:hover {
+        background: #6b639d;
+      }
+      &:active {
+      transform: scale(.97);
+      }
+    }
+
+    .contactsBtn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px 30px;
+      position: static;
+      color: #5756ae;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 700;
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      border: 1px solid #3a387b;
+      border-radius: 5px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      margin: 0 10px;
+      transition: .3s;
+      cursor: pointer;
+      &:hover {
+        background: #fff7f7;
+      }
+      &:active {
+      transform: scale(.97);
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    & {
+      padding: 0 30px 10px;
+      width: 576px;
+      margin: 0;
+    }
+    h1 {
+      width: 500px;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  @media (min-width: 1080px) {
+    h1 {
+      width: 1000px;
+      font-size: 30px;
+      line-height: 36px;
+      line-height: 60px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    h4 {
+      margin: 20px auto;
+      font-size: 26px ;
+    }
+  }
+}
+  

@@ -1,0 +1,96 @@
+  .meal-info {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 5px 20px;
+    .meal-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .youtubelink {
+        width: 100px;
+        height: 30px;
+        margin: 0 10px 30px;
+        &:hover {
+          opacity: .6;
+        }
+      }
+      
+      .receiptTable, th, tr, td {
+        padding: 4px 7px;
+        border: 1px solid gray;
+        border-collapse: collapse;
+      }
+
+      .meal {
+        margin: 0 auto;
+        width: 280px;
+        position: relative;
+        .fa-bookmark, .fa-star {
+          position: absolute;
+          color: rgb(210, 82, 2);
+          top: 0;
+          right: 0;
+          font-size: 50px;
+          margin: 5px;
+          &:hover {
+            color: rgb(227, 54, 1);
+          }
+        }
+
+        img {
+          margin: 10px auto;
+          width: 100%;
+          height: 100%;
+          border-radius: 7px;
+        }
+      }
+
+    }
+
+    @media (min-width: 576px) {
+      .meal-card {
+        padding: 10px 20px;
+        .meal-instruction {
+          font-size: 22px;
+          text-align: justify;
+          text-indent: 30px;
+        }
+        .receiptTable, td{
+          font-size: 22px;
+        }
+        .meal {
+          width: 350px;
+          h3 {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1080px) {
+      width: 1080px;
+      left: 50%;
+      transform: translateX(-50%);
+      .meal-card {
+        padding: 10px 30px;
+        a img {
+          height: 40px;
+          width: 130px;
+        }
+        .meal-instruction {
+          font-size: 24px;
+          text-indent: 50px;
+        }
+        .receiptTable, td{
+          font-size: 24px;
+        }
+        .meal {
+          width: 550px;
+          h3 {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }

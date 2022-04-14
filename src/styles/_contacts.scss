@@ -1,0 +1,137 @@
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  min-height: 530px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #E5E5E5;
+
+  .map-div {
+    margin: 0 auto 10px;
+    padding: 0;
+    .mainmap {
+      width: 320px;
+      height: 200px;
+    }
+  }
+
+  h1 {
+    width: 50%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0 0 0 20px;  
+    .contactIcon {
+      font-size: 20px;
+      line-height: 30px;
+      transform: translateY(2px) scale(1.3);
+    }
+  }
+
+  h5 {
+    margin: 10px 20px;
+  }
+
+  p {
+    margin: 10px 20px;
+    font-size: 18px;
+  }
+
+  h3 {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #252B42;
+  }
+
+  ol li {
+      font-size: 20px;
+      margin: 3px 0;
+      text-transform: capitalize;
+  }
+
+  @media (min-width: 576px) {
+    & {
+      min-height: 580px;
+    }
+    h1 {
+      width: 510px;
+      font-size: 38px;
+      line-height: 80px;
+      .contactIcon {
+        transform: translateY(-3px) scale(1.8);
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+    h5 {
+      font-size: 20px;
+    }
+    .map-div {
+      width: 576px;
+      height: 200px;
+    .mainmap {
+      width: 576px;
+      height: 200px;
+      }
+    }
+    p {
+      margin: 20px 30px 10px 30px;
+      font-size: 22px;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    & {
+      width: 1080px;
+      height: 420px;
+      min-height: 730px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .map-div {
+      width: 1080px;
+      height: 200px;
+    
+    .mainmap {
+      width: 1080px;
+      height: 300px;
+      }
+    }
+    h1 {
+      width: 727px;
+      font-size: 40px;
+      line-height: 80px;
+      .contactIcon {
+        transform: translateY(-6px) scale(2.4);
+      }
+    }
+    h3 {
+      font-size: 26px;
+    }
+    p {
+      margin: 130px 30px 10px 30px;
+      font-size: 28px;
+    }
+  }
+
+}
+
+
