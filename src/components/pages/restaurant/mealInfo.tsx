@@ -9,17 +9,16 @@ import MealNav from './mealNav'
 import youtubeImg from "../../../assets/youtube1.webp"
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
-
+import { useParams } from "react-router-dom";
 
 const MealInfo = () => {
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
   const dispatch = useDispatch()
+  let params = useParams();
 
   useEffect(() => {
-    const url = window.location.pathname
-    const ind = url.indexOf(':') + 1
-    let idMeal = parseFloat(url.slice(ind))
-    dispatch(mainMealAction(idMeal.toString(), "search"))
+    let idMeal = params.mealId!
+    dispatch(mainMealAction(idMeal, "search"))
     dispatch(setCurrentPageAction('meal-info'))
   },[])
 
@@ -29,7 +28,6 @@ const MealInfo = () => {
       .filter(([key,val]) => ingredientKey.slice(13) === key.slice(10))
     return res?.length > 0 && res[0][1]
   }
-
 
   if(loading) {
     return (
@@ -46,7 +44,7 @@ const MealInfo = () => {
   return (
       <div className='restaurant meal-info'>
         <MealNav />
-          {meal && meal.map(meal => (
+          {meal?.length > 0 && meal.map(meal => (
             <div key={uuid()} className="meal-card">
               <h2>{meal.strArea} {' '} {meal.strCategory}</h2>
               <Meal meal={meal} />

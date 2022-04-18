@@ -24,8 +24,6 @@ import {
           setCurrentLongitude(position.coords.longitude)
         }
       }
-    
-
 
     return (
       <div  className="map-div">

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
+const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 interface IProps {
   error: {
@@ -10,10 +12,11 @@ interface IProps {
 
 const NotFound: React.FC<IProps> = ({error}) => {
   const [time, setTime] = useState(5)
+  const navigate = useNavigate();
 
   useEffect(() => {
     if(time === 0) {
-      window.location.assign('/appsR7/2021/restaurant/')
+      navigate(mainPath)
     }
     const timer = setInterval(() => {
       setTime(time - 1)

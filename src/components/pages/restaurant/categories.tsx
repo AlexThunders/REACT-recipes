@@ -9,8 +9,6 @@ import { categoriesList } from '../../../api/meal'
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
 
-
-
 const Categories = () => {
   const [category, setCategory] = useState('Beef')
   const [myList, setMyList] = useState(categoriesList)

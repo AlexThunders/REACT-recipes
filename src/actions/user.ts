@@ -1,4 +1,3 @@
-import { stringify } from "querystring"
 import { PortalActionTypes } from "../types/portal"
 import { IFavouriteMeal, UserActionTypes } from "../types/user"
 

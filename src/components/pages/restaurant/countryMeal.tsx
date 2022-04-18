@@ -37,7 +37,6 @@ const CountryMeal = () => {
     return <NotFound error={error} />
   }
 
-
   return (
     <div className='restaurant'>
       <MealNav />

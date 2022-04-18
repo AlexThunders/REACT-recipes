@@ -38,7 +38,7 @@ const Favourest = () => {
           <>
             {favouriteList?.length > 0 && <div className='clearbtn' onClick={handleClear}>Clear</div>}
 
-            <div className='meal-container'>
+            <div className='meal-container favourite-container'>
               {favouriteList?.length > 0 ? 
                 <>
                   {favouriteList.map(meal => (

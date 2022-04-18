@@ -12,6 +12,7 @@
   position: absolute;
   height: 30px;
   top: 47%;
+
   transform: translateY(-50%);
   transition: .3s;
   cursor: pointer;
@@ -75,6 +76,31 @@
       transform: translateY(-50%) scale(1.07);
     }
   }
+
+  .goback-btn {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: rgb(228, 223, 223);
+    
+    opacity: .7;
+    transition: .3s;
+    &:hover {
+      opacity: 1;
+      color: green;
+      transform: translateY(-50%) scale(1.07);
+    }
+  }
   
   .logo {
     position: absolute;
@@ -95,12 +121,12 @@
 
   .headerRestaurantLink {
     @include linkStyle;
-
+      left: 60px;
   }
 
   .headerLink {
     @include linkStyle;
-    right: 100px;
+    right: 80px;
   }
 
   .rectangle {
@@ -164,11 +190,18 @@
       height: 40px;
     }
     .fa-home {
-      left: 120px;
+      left: 110px;
       font-size: 26px;
     }
+    .goback-btn {
+      left: 160px;
+      padding: 5px;
+      font-size: 26px;
+      height: 34px;
+      width: 35px;
+    }
     .headerRestaurantLink {
-      right: 240px;
+      left: 270px;
       span {
         font-size: 22px;
         margin-right: 40px;
@@ -195,6 +228,9 @@
     }
     .fa-home {
       left: 120px;
+    }
+    .goback-btn {
+      left: 180px;
     }
     .headerRestaurantLink {
       right: 240px;

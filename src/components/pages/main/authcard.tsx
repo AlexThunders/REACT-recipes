@@ -8,10 +8,14 @@ import {
   openSignInAction, 
   logOutAction } from "../../../actions/user";
 import { IUsers } from "../../../types/user";
+import { useNavigate } from "react-router-dom";
+const mainPath = process.env.REACT_APP_MAIN_PATH!
+
 
 const Authcard = () => {
   const {logged} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     dispatch(closeSignInAction())
@@ -23,7 +27,7 @@ const Authcard = () => {
   }
 
   const getOut = () => {
-    window.location.assign('/appsR7/2021/restaurant')
+    navigate(mainPath)
     dispatch(logOutAction(logged))
   }
 
@@ -34,7 +38,7 @@ const Authcard = () => {
         <div className='enterBtn2' onClick={toggleAuth}>
           { logged !== '' ? 'Log Out' : 'Log In' }
         </div>
-        <Link to="/appsR7/2021/restaurant/pages/contacts" className='contactsBtn' >
+        <Link to={`${mainPath}/pages/contacts`} className='contactsBtn' >
           <span>Contacts</span>
         </Link>
       </div>

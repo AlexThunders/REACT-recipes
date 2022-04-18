@@ -37,6 +37,40 @@
           transform: translateY(-50%) scale(1.07);
 }
 
+.header .goback-btn {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: #e4dfdf;
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header .goback-btn:hover {
+  opacity: 1;
+  color: green;
+  -webkit-transform: translateY(-50%) scale(1.07);
+          transform: translateY(-50%) scale(1.07);
+}
+
 .header .logo {
   position: absolute;
   visibility: hidden;
@@ -84,6 +118,7 @@
   -webkit-transition: .3s;
   transition: .3s;
   cursor: pointer;
+  left: 60px;
 }
 
 .header .headerRestaurantLink:hover span {
@@ -145,7 +180,7 @@
   -webkit-transition: .3s;
   transition: .3s;
   cursor: pointer;
-  right: 100px;
+  right: 80px;
 }
 
 .header .headerLink:hover span {
@@ -261,11 +296,18 @@
     height: 40px;
   }
   .header .fa-home {
-    left: 120px;
+    left: 110px;
     font-size: 26px;
   }
+  .header .goback-btn {
+    left: 160px;
+    padding: 5px;
+    font-size: 26px;
+    height: 34px;
+    width: 35px;
+  }
   .header .headerRestaurantLink {
-    right: 240px;
+    left: 270px;
   }
   .header .headerRestaurantLink span {
     font-size: 22px;
@@ -292,6 +334,9 @@
   }
   .header .fa-home {
     left: 120px;
+  }
+  .header .goback-btn {
+    left: 180px;
   }
   .header .headerRestaurantLink {
     right: 240px;
@@ -1228,7 +1273,6 @@
   margin: 0 auto;
   line-height: 30px;
   font-size: 18px;
-  outline: none;
 }
 
 .authPortal .sbmt {
@@ -1330,6 +1374,18 @@
 .restaurant .favouriteMealPar {
   margin: 10px 30px;
   color: #520152;
+}
+
+.restaurant .favourite-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .restaurant .mainInspirationPar {
@@ -1530,7 +1586,6 @@
 
 .restaurant .meal-container .meal .deletemeal_btn {
   position: absolute;
-  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1546,7 +1601,7 @@
   left: 0;
   width: 30px;
   height: 30px;
-  border-radius: 10%;
+  border-radius: 0 10% 0 18%;
   color: #fe5757;
   font-size: 25px;
   opacity: .8;
@@ -1567,7 +1622,6 @@
 
 .restaurant .meal-container .meal .addtofavor_btn {
   position: absolute;
-  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1578,22 +1632,23 @@
       -ms-flex-align: center;
           align-items: center;
   z-index: 33;
-  width: 30px;
-  height: 29px;
+  width: 35px;
+  height: 40px;
   margin: 0;
   padding: 0;
-  right: 7px;
-  bottom: 0;
-  border-radius: 10%;
-  background-color: #fdcb04;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 10px 0 30% 0;
+  background-color: #ffd015;
   color: #c93b3b;
-  opacity: .8;
+  opacity: .7;
 }
 
 .restaurant .meal-container .meal .addtofavor_btn:hover {
-  -webkit-transform: translate(-15%, -40%) scale(1.8);
-          transform: translate(-15%, -40%) scale(1.8);
+  -webkit-transform: translate(-40%, -39%) scale(1.8);
+          transform: translate(-40%, -39%) scale(1.8);
   opacity: 1;
+  border-radius: 10px 0 15% 0;
   color: white;
   background-color: #ff7504;
 }
@@ -1688,6 +1743,11 @@
   .restaurant .meal-container .meal {
     width: 330px;
     height: 270px;
+  }
+  .restaurant .meal-container .meal .deletemeal_btn {
+    font-size: 37px;
+    left: 4px;
+    bottom: 6px;
   }
   .restaurant .meal-container .meal img {
     width: 85%;
@@ -1815,12 +1875,12 @@
   color: #d25202;
   top: 0;
   right: 0;
-  font-size: 50px;
+  font-size: 44px;
   margin: 5px;
 }
 
 .meal-info .meal-card .meal .fa-bookmark:hover, .meal-info .meal-card .meal .fa-star:hover {
-  color: #e33601;
+  color: #fca605;
 }
 
 .meal-info .meal-card .meal img {
@@ -1844,6 +1904,9 @@
   }
   .meal-info .meal-card .meal {
     width: 350px;
+  }
+  .meal-info .meal-card .meal .fa-bookmark, .meal-info .meal-card .meal .fa-star {
+    font-size: 55px;
   }
   .meal-info .meal-card .meal h3 {
     font-size: 30px;

@@ -1,5 +1,8 @@
 import { IUser } from "../types/user"
 
+const mainPath = process.env.REACT_APP_MAIN_PATH!
+const mainRestaurantPath = process.env.REACT_APP_MAIN_PATH_RESTAURANT!
+
 export const getUsersFromLocal = () => {
   const localUsers = localStorage.getItem('users')
   return localUsers ? JSON.parse(localUsers).users : []
@@ -11,17 +14,22 @@ export const getLoggedFromLocal = () => {
 }
 
 export const customizeLink = (currentPage: string, logged: string) => {
-  if(currentPage !== 'restaurant' && logged === 'restaurant') return '/appsR7/2021/restaurant/pages/restaurant'
-  if(currentPage === 'restaurant' && logged === 'restaurant')  return '/appsR7/2021/restaurant'
-  if(currentPage === 'restaurant' && logged === '') return '/appsR7/2021/restaurant/pages/contacts'
-  if(currentPage === 'restaurant' && logged !== '') return '/appsR7/2021/restaurant/pages/contacts'
-  if(currentPage === '/' && logged === '') return '/appsR7/2021/restaurant/pages/contacts'
-  if(currentPage === '/' && logged !== '') return '/appsR7/2021/restaurant/pages/account'
-  if(currentPage === 'contacts' && logged === '') return '/appsR7/2021/restaurant'
-  if(currentPage === 'contacts' && logged !== '') return '/appsR7/2021/restaurant/pages/account'
-  if(currentPage === 'account' && logged !== '') return '/appsR7/2021/restaurant'
-  if(currentPage === 'restaurant') return '/appsR7/2021/restaurant'
-  return '/appsR7/2021/restaurant'
+  if(currentPage !== 'restaurant' && logged === 'restaurant') return mainRestaurantPath
+  if(currentPage === 'restaurant' && logged === 'restaurant')  return mainPath
+  if(currentPage === 'restaurant' && logged === '') return `${mainPath}/pages/contacts`
+  if(currentPage === 'country-meal' ||
+    currentPage === 'search-meal' ||
+    currentPage === 'favourite' ||
+    currentPage === 'categories' ||
+    currentPage === 'meal-info') return `${mainPath}/pages/contacts`
+  if(currentPage === 'restaurant' && logged !== '') return `${mainPath}/pages/contacts`
+  if(currentPage === '/' && logged === '') return `${mainPath}/pages/contacts`
+  if(currentPage === '/' && logged !== '') return `${mainPath}/pages/account`
+  if(currentPage === 'contacts' && logged === '') return mainPath
+  if(currentPage === 'contacts' && logged !== '') return `${mainPath}/pages/account`
+  if(currentPage === 'account' && logged !== '') return mainPath
+  if(currentPage === 'restaurant') return mainPath
+  return mainPath
 }
 
 export const customizeLinkTitle = (currentPage: string, logged: string) => {

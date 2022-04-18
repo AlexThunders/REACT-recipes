@@ -11,10 +11,15 @@ import {
   openSignInAction,
   clearErrorAction,
   logOutAction } from "../../actions/user";
+import { useNavigate } from "react-router-dom";
+
+const mainPath = process.env.REACT_APP_MAIN_PATH!
+
 
 const Header = () => {
   const {logged, currentPage} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   
   const toggleAuth = () => {
     dispatch(clearErrorAction())
@@ -22,7 +27,7 @@ const Header = () => {
   }
 
   const getOut = () => {
-    window.location.assign('/appsR7/2021/restaurant')
+    navigate(mainPath)
     dispatch(logOutAction(logged))
   }
 
@@ -40,10 +45,12 @@ const Header = () => {
          <span>{customizeLinkTitle(currentPage, 'restaurant')}</span>
       </Link>
       <a href="https://alexthunders.ru"><i className="fas fa-home"></i></a>
+      <div className="goback-btn" onClick={(() => navigate(-1))}><i className="fas fa-chevron-left"></i></div>
       <div className="rectangle"></div>
       <button className="enterBtn" onClick={toggleAuth}>
         <span>{logged !== '' ? 'Logout' : 'Login'}</span>
       </button>
+      
     </div>
   )
 }

@@ -14,32 +14,28 @@ import MealInfo from "./components/pages/restaurant/mealInfo";
 import Categories from "./components/pages/restaurant/categories";
 import Favourite from "./components/pages/restaurant/favourite";
 import UnderDevInfo from "./components/portal/info";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { closeUnderDevInfoAction, openUnderDevInfoAction } from "./actions/user";
-
+const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 const App = () => {
   const {isOpenSignIn, isOpenSignUp, isOpenUnderDevInfo} = useAppSelector(state => state.portal)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(openUnderDevInfoAction())
-  },[])
 
   return (
     <div className="app">
       <Header />
       <Routes>
-        <Route path="/appsR7/2021/restaurant" element={<Main />} />
-        <Route path="/appsR7/2021/restaurant/pages/contacts" element={<Contacts />} />
-        <Route path="/appsR7/2021/restaurant/pages/account" element={<Account />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant" element={<Restaurant />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant/countryMeal" element={<CountryMeal />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant/searchMeal" element={<SearchMeal />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant/:mealId" element={<MealInfo />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant/categories" element={<Categories />} />
-        <Route path="/appsR7/2021/restaurant/pages/restaurant/favourite" element={<Favourite />} />
+        <Route path={mainPath} >
+          <Route index={true} element={<Main />} />
+          <Route path={`${mainPath}/pages/contacts`} element={<Contacts />} />
+          <Route path={`${mainPath}/pages/account`} element={<Account />} />
+          <Route path={`${mainPath}/pages/restaurant`} >
+            <Route index={true} element={<Restaurant />} />
+            <Route path="countryMeal" element={<CountryMeal />} />
+            <Route path="searchMeal" element={<SearchMeal />} />
+            <Route path=":mealId" element={<MealInfo />} />
+            <Route path="categories" element={<Categories />} />
+            <Route path="favourite" element={<Favourite />} />
+          </Route>
+        </Route>
         <Route path="*" element={<NotFound error={{message: "There's nothing here!", status: 404}} />}/>
       </Routes>
       {isOpenSignIn && <SignInPortal />}

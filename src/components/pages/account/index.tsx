@@ -7,17 +7,21 @@ import {
   setCurrentPageAction,
   logOutAction } from "../../../actions/user";
 import { getEmail } from "../../../api/user";
+import { useNavigate } from "react-router-dom";
+
+const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 const Account = () => {
   const {logged, users} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(setCurrentPageAction('account'))
   },[])
 
   const logOut = () => {
-    window.location.assign('/appsR7/2021/restaurant')
+    navigate(mainPath)
     dispatch(logOutAction(logged))
   }
 
@@ -31,7 +35,7 @@ const Account = () => {
       <p>As a registered user you can create a list of your favourite dishes</p>
         <div className='enterBtns'>
           <div className='enterBtn2' onClick={logOut}>Log Out</div>
-          <Link to="/appsR7/2021/restaurant/pages/contacts" className='contactsBtn'>
+          <Link to={`${mainPath}/pages/contacts`} className='contactsBtn'>
             <span>Go to contacts</span>
           </Link>
       </div>

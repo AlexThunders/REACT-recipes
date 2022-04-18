@@ -8,19 +8,23 @@ import {
   clearErrorAction,
   closeSignInAction,
   openSignUpAction, } from '../../actions/user';
+import { useNavigate } from "react-router-dom";
+
+const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 const SignInPortal:React.FC = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const {error, users} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   
   const checkAuth = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
     dispatch(authUserAction(login, password))
     if(users && users.some((user: IUser) => user.authorized === true)) {
       dispatch(closeSignInAction())
-      window.location.assign("/appsR7/2021/restaurant/pages/account")
+      navigate(`${mainPath}/pages/account`)
     }
     setLogin('');
     setPassword('');

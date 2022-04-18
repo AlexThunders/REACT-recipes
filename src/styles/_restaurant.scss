@@ -13,6 +13,12 @@
     color: rgb(82, 1, 82);
   }
 
+  .favourite-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .mainInspirationPar {
     margin: 10px 20px;
     padding: 5px;
@@ -130,7 +136,6 @@
     justify-content: space-around;
     align-items: flex-start;
 
-
     .meal {
       position: relative;
       width: 280px;
@@ -164,7 +169,6 @@
 
       .deletemeal_btn {
         position: absolute;
-        visibility: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -174,7 +178,7 @@
         left: 0;
         width: 30px;
         height: 30px;
-        border-radius: 10%;
+        border-radius: 0 10% 0 18%;
         color: rgb(254, 87, 87);
         font-size: 25px;
         opacity: .8;
@@ -192,24 +196,24 @@
 
       .addtofavor_btn {
         position: absolute;
-        visibility: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 33;
-        width: 30px;
-        height: 29px;
+        width: 35px;
+        height: 40px;
         margin: 0;
         padding: 0;
-        right: 7px;
-        bottom: 0;
-        border-radius: 10%;
-        background-color: rgb(253, 203, 4);
+        right: 0px;
+        bottom: 0px;
+        border-radius: 10px 0 30% 0;
+        background-color: rgb(255, 208, 21);
         color: rgb(201, 59, 59);
-        opacity: .8;
+        opacity: .7;
         &:hover {
-          transform: translate(-15%,-40%) scale(1.8);
+          transform: translate(-40%,-39%) scale(1.8);
           opacity: 1;
+          border-radius: 10px 0 15% 0;
           color: rgb(255, 255, 255);
           background-color: rgb(255, 117, 4);
         }
@@ -304,6 +308,11 @@
       .meal {
         width: 330px;
         height: 270px;
+        .deletemeal_btn {
+          font-size: 37px;
+          left: 4px;
+          bottom: 6px;
+        }
         img {
           width: 85%;
         }

@@ -7,7 +7,6 @@ import { IUsers } from "../../../types/user";
 import YandexMap from "./map";
 import { FcBusinessman } from "react-icons/fc";
 
-
 const Contacts = () => {
   const [showMarker, setShowMarker] = useState(true)
   const {logged, users} = useAppSelector<IUsers>(state => state.users)

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Authcard from './authcard';
 import Card from './card';
-import { setCurrentPageAction } from '../../../actions/user';
+import { openUnderDevInfoAction, setCurrentPageAction } from '../../../actions/user';
 import img1c from '../../../assets/dinner1c.webp'
 import img2c from '../../../assets/table1c.webp'
 import img3c from '../../../assets/imagesc.webp'
@@ -12,6 +12,7 @@ const Main = () => {
 
   useEffect(() => {
     dispatch(setCurrentPageAction('/'))
+    dispatch(openUnderDevInfoAction())
   },[])
   return (
     <div className='container'>
