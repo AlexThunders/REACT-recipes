@@ -16,6 +16,7 @@ const Restaurant = () => {
   useEffect(() => {
     dispatch(setCurrentPageAction('restaurant'));
     dispatch(mainMealAction("",""))
+    document.title = "MEAL | Recipes"
   },[])
 
   if(loading) {

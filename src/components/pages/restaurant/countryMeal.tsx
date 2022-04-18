@@ -18,6 +18,7 @@ const CountryMeal = () => {
   useEffect(() => {
     dispatch(mainMealAction(country, "country"))
     dispatch(setCurrentPageAction('country-meal'))
+    document.title = "MEAL | Meal by Country"
   }, [])
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {

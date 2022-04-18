@@ -18,6 +18,7 @@ const Categories = () => {
   useEffect(() => {
     dispatch(mainMealAction(category,"category"))
     dispatch(setCurrentPageAction('categories'))
+    document.title = "MEAL | Categories"
   },[])
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {

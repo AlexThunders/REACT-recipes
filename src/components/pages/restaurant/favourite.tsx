@@ -17,6 +17,7 @@ const Favourest = () => {
 
   useEffect(() => {
     dispatch(setCurrentPageAction('favourite'))
+    document.title = "MEAL | Favourite"
   },[])
 
   useEffect(() => {

@@ -16,6 +16,7 @@ const SearchMeal = () => {
 
   useEffect(() => {
     dispatch(setCurrentPageAction('search-meal'))
+    document.title = "MEAL | Search Meal"
   },[])
 
   const handleSubmit = (e: FormEvent) => {

@@ -34,12 +34,12 @@ export const customizeLink = (currentPage: string, logged: string) => {
 
 export const customizeLinkTitle = (currentPage: string, logged: string) => {
   if(currentPage !== 'restaurant' && logged === 'restaurant') return 'Recipes'
-  if(currentPage === 'restaurant' && logged === 'restaurant')  return 'Home'
+  if(currentPage === 'restaurant' && logged === 'restaurant')  return 'Main'
   if(currentPage === '/' && logged === '') return 'Contacts'
   if(currentPage === '/' && logged !== '') return 'Profile'
-  if(currentPage === 'contacts' && logged === '') return 'Home'
+  if(currentPage === 'contacts' && logged === '') return 'Main'
   if(currentPage === 'contacts' && logged !== '') return 'Profile'
-  if(currentPage === 'account' && logged !== '') return 'Home'
+  if(currentPage === 'account' && logged !== '') return 'Main'
   return 'Contacts'
 }
 

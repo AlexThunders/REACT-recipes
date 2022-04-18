@@ -15,6 +15,10 @@ const NotFound: React.FC<IProps> = ({error}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "MEAL | 404"
+  },[])
+
+  useEffect(() => {
     if(time === 0) {
       navigate(mainPath)
     }

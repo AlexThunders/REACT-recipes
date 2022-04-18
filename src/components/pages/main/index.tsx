@@ -13,6 +13,7 @@ const Main = () => {
   useEffect(() => {
     dispatch(setCurrentPageAction('/'))
     dispatch(openUnderDevInfoAction())
+    document.title = "MEAL | Home"
   },[])
   return (
     <div className='container'>

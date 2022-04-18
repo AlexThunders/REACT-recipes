@@ -14,6 +14,7 @@ const Contacts = () => {
 
   useEffect(() => {
     dispatch(setCurrentPageAction('contacts'))
+    document.title = "MEAL | Contacts"
   },[])
 
   return (

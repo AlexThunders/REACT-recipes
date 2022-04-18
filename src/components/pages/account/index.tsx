@@ -18,6 +18,7 @@ const Account = () => {
 
   useEffect(() => {
     dispatch(setCurrentPageAction('account'))
+    document.title = "MEAL | Profile"
   },[])
 
   const logOut = () => {

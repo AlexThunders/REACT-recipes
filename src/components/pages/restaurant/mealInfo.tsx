@@ -20,6 +20,7 @@ const MealInfo = () => {
     let idMeal = params.mealId!
     dispatch(mainMealAction(idMeal, "search"))
     dispatch(setCurrentPageAction('meal-info'))
+    document.title = "MEAL | Meal-info"
   },[])
 
   const renderRows = (meal: any[], ingredientKey: string): string  => {
