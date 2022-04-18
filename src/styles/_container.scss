@@ -1,3 +1,13 @@
+.night-theme {
+  background-color: rgb(40, 41, 67);
+  color: #fff;
+}
+
+.day-theme {
+  background-color: #E5E5E5;
+  color: rgb(24, 3, 44);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -10,7 +20,6 @@
   height: 1165px;
   min-height: 330px;
   top: 80px;
-  background-color: #E5E5E5;
 
   @media (min-width: 576px) {
     & {

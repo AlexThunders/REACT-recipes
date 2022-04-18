@@ -10,14 +10,15 @@ import {
 import { 
   openSignInAction,
   clearErrorAction,
-  logOutAction } from "../../actions/user";
+  logOutAction, 
+  toggleTheme} from "../../actions/user";
 import { useNavigate } from "react-router-dom";
 
 const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 
 const Header = () => {
-  const {logged, currentPage} = useAppSelector<IUsers>(state => state.users)
+  const {logged, currentPage, darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
   const navigate = useNavigate();
   
@@ -29,6 +30,10 @@ const Header = () => {
   const getOut = () => {
     navigate(mainPath)
     dispatch(logOutAction(logged))
+  }
+
+  const handleToggleTheme = () => {
+    dispatch(toggleTheme())
   }
 
   return (
@@ -50,7 +55,14 @@ const Header = () => {
       <button className="enterBtn" onClick={toggleAuth}>
         <span>{logged !== '' ? 'Logout' : 'Login'}</span>
       </button>
-      
+
+      <div 
+        className="theme-btn"
+        onClick={handleToggleTheme}
+        style={darkTheme ? {backgroundColor: '#94bbe2', color: '#002259'} : {backgroundColor: '#002259', color: 'white'}}
+        >
+        {darkTheme ? 'day-theme' : 'night-theme'}
+        </div>
     </div>
   )
 }

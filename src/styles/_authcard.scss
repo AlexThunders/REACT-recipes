@@ -14,7 +14,6 @@
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.2px;
-    color: #252B42;
     margin-top: 0;
     padding: 0;
   }
@@ -45,7 +44,7 @@
       transition: .3s;
       cursor: pointer;
       &:hover {
-        background: #6b639d;
+        background: #945dcb;
       }
       &:active {
       transform: scale(.97);
@@ -58,7 +57,6 @@
       align-items: center;
       padding: 5px 30px;
       position: static;
-      color: #5756ae;
       text-decoration: none;
       font-style: normal;
       font-weight: 700;
@@ -74,7 +72,7 @@
       transition: .3s;
       cursor: pointer;
       &:hover {
-        background: #fff7f7;
+        color: white;
       }
       &:active {
       transform: scale(.97);

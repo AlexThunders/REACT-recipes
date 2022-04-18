@@ -10,9 +10,11 @@ import youtubeImg from "../../../assets/youtube1.webp"
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
 import { useParams } from "react-router-dom";
+import { IUsers } from '../../../types/user'
 
 const MealInfo = () => {
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
+  const {darkTheme } = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
   let params = useParams();
 
@@ -43,7 +45,7 @@ const MealInfo = () => {
   }
 
   return (
-      <div className='restaurant meal-info'>
+      <div className={darkTheme ? 'restaurant meal-info night-theme' : 'restaurant meal-info day-theme'}>
         <MealNav />
           {meal?.length > 0 && meal.map(meal => (
             <div key={uuid()} className="meal-card">

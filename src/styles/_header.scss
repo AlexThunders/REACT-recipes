@@ -58,9 +58,30 @@
   background-color: #a6c3dc;
   padding: 30px 20px;
 
+  .theme-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+    width: 70px;
+    height: 20px;
+    font-size: .4rem;
+    line-height: 10px;
+    left: 5px;
+    top: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #8ba0c1;
+      color: blue;
+    }
+  }
+
   .fa-home {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     left: 5px;
     z-index: 1;
@@ -79,7 +100,7 @@
 
   .goback-btn {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 40px;
     transform: translateY(-50%);
     display: flex;
@@ -92,7 +113,6 @@
     border-radius: 3px;
     padding: 5px;
     background-color: rgb(228, 223, 223);
-    
     opacity: .7;
     transition: .3s;
     &:hover {
@@ -189,6 +209,10 @@
       padding: 8px 10px;
       height: 40px;
     }
+    .theme-btn {
+      left: 110px;
+      width: 85px;
+    }
     .fa-home {
       left: 110px;
       font-size: 26px;
@@ -221,6 +245,10 @@
   }
 
   @media (min-width: 1080px) {
+    .theme-btn {
+      left: 120px;
+      width: 95px;
+    }
     .enterBtn {
       right: 40px;
       padding: 8px 20px;

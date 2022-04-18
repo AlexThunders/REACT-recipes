@@ -21,13 +21,12 @@ export const addMealToFavourite = (logged: string, favouriteMeal: IFavouriteMeal
         type: UserActionTypes.ADD_TO_FAVOURITE,
         payload: {logged, mymeal: favouriteMeal}
       })
-
 export const removeMealFromFavourite = (logged: string, id: string) => ({
         type: UserActionTypes.REMOVE_FROM_FAVORITE,
         payload: {logged, id}
       })
-
 export const clearFavourite = (logged: string) => ({
         type: UserActionTypes.CLEAR_FAVOURITE,
         payload: logged
       })
+export const toggleTheme = () => ({type: UserActionTypes.TOGGLE_THEME})

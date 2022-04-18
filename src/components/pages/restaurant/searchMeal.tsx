@@ -8,9 +8,11 @@ import {v4 as uuid} from 'uuid'
 import { mainMealAction } from '../../../actions/meal'
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
+import { IUsers } from '../../../types/user'
 
 const SearchMeal = () => {
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
+  const {darkTheme } = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
   const [inp, setInp] = useState('')
 
@@ -37,7 +39,7 @@ const SearchMeal = () => {
   }
 
   return (
-    <div className='restaurant'>
+    <div className={darkTheme ? 'restaurant night-theme' : 'restaurant day-theme'}>
       <MealNav />
       <p className="searchMealsPar">To find meals and receipts enter a name or just a letter in the input down below</p>
       <form className='searchMealsForm' onSubmit={handleSubmit}>

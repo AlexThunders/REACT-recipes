@@ -18,6 +18,7 @@ export interface IUsers {
   error: null | string;
   logged: string;
   currentPage: string;
+  darkTheme: boolean;
 }
 
 export enum UserActionTypes {
@@ -31,7 +32,8 @@ export enum UserActionTypes {
   ADD_TO_FAVOURITE = "ADD_TO_FAVOURITE",
   SET_FAVOURITE_MEALS = "SET_FAVOURITE_MEALS",
   REMOVE_FROM_FAVORITE = "REMOVE_FROM_FAVORITE",
-  CLEAR_FAVOURITE = "CLEAR_FAVOURITE"
+  CLEAR_FAVOURITE = "CLEAR_FAVOURITE",
+  TOGGLE_THEME = "TOGGLE_THEME"
 }
 
 type AddUserAction = {
@@ -89,6 +91,10 @@ type ClearFavouriteAction = {
   payload: string;
 }
 
+type ToggleThemeAction = {
+  type: UserActionTypes.TOGGLE_THEME,
+}
+
 export type UserActions = 
   AddUserAction |
   FindUserAction | 
@@ -99,4 +105,5 @@ export type UserActions =
   SetErrorAction |
   AddToFavouriteAction |
   RemoveFromFavouriteMealsAction |
-  ClearFavouriteAction;
+  ClearFavouriteAction |
+  ToggleThemeAction;

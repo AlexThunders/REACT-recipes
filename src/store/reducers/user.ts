@@ -7,6 +7,7 @@ const initState: IUsers = {
   error: null,
   logged: getLoggedFromLocal(),
   currentPage: '/appsR7/2021/restaurant',
+  darkTheme: false
 }
 
 export const userReducer = (state = initState, action: UserActions) => {
@@ -116,6 +117,12 @@ export const userReducer = (state = initState, action: UserActions) => {
       })
       return {
         ...state, users: clearedFavourets
+      }
+    
+    case UserActionTypes.TOGGLE_THEME: 
+      return {
+        ...state,
+        darkTheme: !state.darkTheme
       }
 
     default:

@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../hooks/useTypedSelector";
 import {v4 as uuid} from 'uuid';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCurrentPageAction } from "../../../actions/user";
 import { IUsers } from "../../../types/user";
@@ -8,8 +8,7 @@ import YandexMap from "./map";
 import { FcBusinessman } from "react-icons/fc";
 
 const Contacts = () => {
-  const [showMarker, setShowMarker] = useState(true)
-  const {logged, users} = useAppSelector<IUsers>(state => state.users)
+  const {logged, users, darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const Contacts = () => {
   },[])
 
   return (
-    <div className='contacts-container'>
+    <div className={darkTheme ? 'contacts-container night-theme' : 'contacts-container day-theme'}>
       <h1>Clients <FcBusinessman className="contactIcon"/></h1>
       <h5>HQ is marked on the map</h5>
       <YandexMap />

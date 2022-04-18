@@ -9,10 +9,12 @@ import MealNav from './mealNav'
 import { countriesList } from '../../../api/meal'
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
+import { IUsers } from '../../../types/user'
 
 const CountryMeal = () => {
   const [country, setCountry] = useState('Italian')
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
+  const {darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const CountryMeal = () => {
   }
 
   return (
-    <div className='restaurant'>
+    <div className={darkTheme ? 'restaurant night-theme' : 'restaurant day-theme'}>
       <MealNav />
       <h3>Meal in 
         <select value={country} onChange={handleChange}>

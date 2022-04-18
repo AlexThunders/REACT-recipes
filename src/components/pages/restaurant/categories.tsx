@@ -8,11 +8,13 @@ import MealNav from './mealNav'
 import { categoriesList } from '../../../api/meal'
 import { IMeal } from '../../../types/meal'
 import { setCurrentPageAction } from '../../../actions/user'
+import { IUsers } from '../../../types/user'
 
 const Categories = () => {
   const [category, setCategory] = useState('Beef')
   const [myList, setMyList] = useState(categoriesList)
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
+  const {darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const Categories = () => {
   }
 
   return (
-    <div className='restaurant'>
+    <div className={darkTheme ? 'restaurant night-theme' : 'restaurant day-theme'}>
       <MealNav />
       <h1>Choose Category
       <select value={category} onChange={handleChange}>

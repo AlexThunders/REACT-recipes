@@ -6,8 +6,11 @@ import { openUnderDevInfoAction, setCurrentPageAction } from '../../../actions/u
 import img1c from '../../../assets/dinner1c.webp'
 import img2c from '../../../assets/table1c.webp'
 import img3c from '../../../assets/imagesc.webp'
+import { useAppSelector } from '../../../hooks/useTypedSelector';
+import { IUsers } from '../../../types/user';
 
 const Main = () => {
+  const {darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -16,7 +19,7 @@ const Main = () => {
     document.title = "MEAL | Home"
   },[])
   return (
-    <div className='container'>
+    <div className={darkTheme ? 'container night-theme' : 'container day-theme'}>
       <Authcard />
       <div className="cards">
         <Card header="Dinner" bgPicture={img1c} icon="fas fa-utensils" />

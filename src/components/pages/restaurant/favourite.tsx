@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import { clearFavourite, setCurrentPageAction } from '../../../actions/user'
 
 const Favourest = () => {
-  const {logged, users } = useAppSelector<IUsers>(state => state.users)
+  const {logged, users, darkTheme } = useAppSelector<IUsers>(state => state.users)
   const [favouriteList, setFavouriteList] = useState<IFavouriteMeal[]>(() => {
     let mainuser = users?.length > 0 && users.filter(user => user.login === logged)[0]
     return mainuser ? mainuser.favouriteMeals : []
@@ -31,7 +31,7 @@ const Favourest = () => {
   }
 
   return (
-    <div className='restaurant'>
+    <div className={darkTheme ? 'restaurant night-theme' : 'restaurant day-theme'}>
       <MealNav />
       <h1>My favorite meals</h1>
       {logged === "" ? 

@@ -8,10 +8,12 @@ import NotFound from '../notFound'
 import Meal from './meal'
 import MealNav from './mealNav'
 import { IMeal } from '../../../types/meal'
+import { IUsers } from '../../../types/user'
 
 const Restaurant = () => {
   const dispatch = useDispatch()
   const {error, loading, meal} = useAppSelector<IMeal>(state => state.meal)
+  const {darkTheme} = useAppSelector<IUsers>(state => state.users)
 
   useEffect(() => {
     dispatch(setCurrentPageAction('restaurant'));
@@ -32,7 +34,7 @@ const Restaurant = () => {
   }
 
   return (
-    <div className='restaurant'>
+    <div className={darkTheme ? 'restaurant night-theme' : 'restaurant day-theme'}>
       <MealNav />
       <h1>Restaurant</h1>
       <p className='mainInspirationPar'>Looking for inspiration on how to cook, what to cook, then you are at the right place</p>

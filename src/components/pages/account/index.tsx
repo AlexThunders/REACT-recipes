@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 const Account = () => {
-  const {logged, users} = useAppSelector<IUsers>(state => state.users)
+  const {logged, users, darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const Account = () => {
   }
 
   return (
-    <div className='account-container'>
+    <div className={darkTheme ? 'account-container night-theme' : 'account-container day-theme'}>
       <div className="profile">
         <h2>Profile</h2>
         <h6>{getEmail(users, logged)}</h6>

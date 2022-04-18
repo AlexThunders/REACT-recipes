@@ -13,7 +13,7 @@ const mainPath = process.env.REACT_APP_MAIN_PATH!
 
 
 const Authcard = () => {
-  const {logged} = useAppSelector<IUsers>(state => state.users)
+  const {logged, darkTheme} = useAppSelector<IUsers>(state => state.users)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Authcard = () => {
   }
 
   return (
-    <div className='authcard'>
+    <div className={darkTheme ? 'authcard night-theme' : 'authcard day-theme'}>
       <h1>Our recipes are used in the best restaurants in the world</h1>
       <div className='enterBtns'>
         <div className='enterBtn2' onClick={toggleAuth}>
