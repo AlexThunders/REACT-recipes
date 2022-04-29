@@ -37,7 +37,7 @@ const Header = () => {
   }
 
   return (
-    <div className="header" style={{"backgroundColor": bgCustomColor(currentPage)}}>
+    <div className="header" style={{"backgroundColor": bgCustomColor(currentPage)}} id="headerId" >
       <div className='logo'>
         <img className="logopic" src={logo} alt="logo" />
       </div>
@@ -50,7 +50,7 @@ const Header = () => {
          <span>{customizeLinkTitle(currentPage, 'restaurant')}</span>
       </Link>
       <a href="https://alexthunders.ru"><i className="fas fa-home"></i></a>
-      <div className="goback-btn" onClick={(() => navigate(-1))}><i className="fas fa-chevron-left"></i></div>
+      <div className="goback-btn" onClick={(() => navigate(-1))} data-testid="gobacktestID"><i className="fas fa-chevron-left"></i></div>
       <div className="rectangle"></div>
       <button className="enterBtn" onClick={toggleAuth}>
         <span>{logged !== '' ? 'Logout' : 'Login'}</span>

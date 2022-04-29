@@ -23,6 +23,7 @@ const SearchMeal = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+    if(inp === "") return
     dispatch(mainMealAction(inp, "mealTitle"))
   }
 
@@ -43,11 +44,11 @@ const SearchMeal = () => {
       <MealNav />
       <p className="searchMealsPar">To find meals and receipts enter a name or just a letter in the input down below</p>
       <form className='searchMealsForm' onSubmit={handleSubmit}>
-        <input type="text" value={inp} onChange={e => setInp(e.target.value)} />
+        <input type="text" value={inp} onChange={e => setInp(e.target.value)} data-testid="searchInpID"/>
         <input type="submit" value="search" />
       </form>
       <hr />
-      <div className='meal-container'>
+      <div className='meal-container' data-testid="mealContainer">
         {meal && meal.map(meal => (
           <Meal key={uuid()} meal={meal} />
         ))}

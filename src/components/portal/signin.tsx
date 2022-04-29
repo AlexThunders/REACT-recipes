@@ -54,7 +54,7 @@ const SignInPortal:React.FC = () => {
           autoComplete='off'
         />
         <br /><br />
-        <label is="3dx" htmlFor='password' >Paasword: </label><br />
+        <label is="3dx" htmlFor='password' >Password: </label><br />
         <input 
           type="password"
           name="password"

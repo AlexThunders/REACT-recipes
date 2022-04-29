@@ -52,8 +52,8 @@ const Meal: React.FC<IProps> = ({meal}) => {
   }
 
   return (
-    <div className='meal' >
-      <h3 onClick={handleClick}>{meal.strMeal}</h3> 
+    <div className='meal' data-testid="mealCard">
+      <h3 onClick={handleClick}>{meal?.strMeal}</h3> 
         { currentPage !== "favourite" &&
           <div className='addtofavor_btn' onClick={addToFavorite}>
             {inFavourite ? <i className="fas fa-bookmark"></i> : <i className="fas fa-star"></i>}
@@ -62,11 +62,11 @@ const Meal: React.FC<IProps> = ({meal}) => {
         }
           {
             currentPage === 'favourite' && 
-              <div className='deletemeal_btn' onClick={deleteFromFavorite}>
+              <div className='deletemeal_btn' onClick={deleteFromFavorite} data-testid="deleteMealTestID">
                 <i className="fas fa-trash-alt"></i> 
               </div>
           }
-      <img onClick={handleClick} src={meal.strMealThumb} alt={meal.strMealThumb} />
+      <img onClick={handleClick} src={meal?.strMealThumb} alt={meal?.strMealThumb} />
     </div>
   )
 }

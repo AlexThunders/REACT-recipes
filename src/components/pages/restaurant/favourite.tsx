@@ -43,7 +43,7 @@ const Favourest = () => {
               {favouriteList?.length > 0 ? 
                 <>
                   {favouriteList.map(meal => (
-                      <Meal key={uuid()} meal={meal} />
+                      <Meal key={uuid()} meal={meal}  data-testid="clearBtnTestID"/>
                   ))} 
                 </>          
                 : <p className='favouriteMealPar'>You haven't added favourite meals yet</p>

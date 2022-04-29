@@ -18,9 +18,9 @@ export const userReducer = (state = initState, action: UserActions) => {
       if(state.users?.length === 0) {
         return {...state, error: "User with this name is not registered."}
       }
-      else if(state.users.some(user => user.login.toLowerCase() == action.payload.login.toLowerCase())) {
+      else if(state.users.some(user => user.login.toLowerCase() === action.payload.login.toLowerCase())) {
         newUsers = state.users.map(user => {
-          if(user.login.toLowerCase() == action.payload.login.toLowerCase() && user.password == action.payload.password){
+          if(user.login.toLowerCase() === action.payload.login.toLowerCase() && user.password === action.payload.password){
               if(state.users.some(user => user.authorized === true)) return user
               state.error = null
               user.authorized = true

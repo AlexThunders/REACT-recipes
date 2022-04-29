@@ -19,14 +19,14 @@ const Main = () => {
     document.title = "MEAL | Home"
   },[])
   return (
-    <div className={darkTheme ? 'container night-theme' : 'container day-theme'}>
+    <div className={darkTheme ? 'container night-theme' : 'container day-theme'} id="main">
       <Authcard />
       <div className="cards">
         <Card header="Dinner" bgPicture={img1c} icon="fas fa-utensils" />
         <Card header="Lunch" bgPicture={img2c} icon="fas fa-hamburger" />
         <Card header="Dessert" bgPicture={img3c} icon="fas fa-cheese" />
       </div>
-      <footer>Alex Thunders <i className="fas fa-copyright"></i> 2022</footer>
+      <footer title="Alex_Thunders">Alex Thunders <i className="fas fa-copyright" data-testid="yearTestID"></i> 2022</footer>
     </div>
   )
 }
