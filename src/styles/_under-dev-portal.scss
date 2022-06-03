@@ -8,7 +8,7 @@
   margin: 0;
   padding: 5px 20px 10px;
   background-color: rgb(132, 39, 0);
-  z-index: 1;
+  z-index: 99;
   border-radius: 3px;
 
   p {
@@ -34,7 +34,7 @@
     margin: 5px;
     font-size: 25px;
     color: #a44138;
-    transition: .2s;
+    transition: 0.2s;
     cursor: pointer;
     &:hover {
       color: #c9675e;
@@ -65,7 +65,7 @@
     padding-bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    p{
+    p {
       font-size: 26px;
     }
     img {
